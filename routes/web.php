@@ -31,7 +31,7 @@ Route::get('/mission','Frontend\FrontendController@mission')->name('our.mission'
 
 Route::get('/vision','Frontend\FrontendController@vision')->name('our.vision');
 
-Route::post('/communicate','Frontend\FrontendController@store')->name('communicate.store');
+Route::post('/reserve','Frontend\FrontendController@book')->name('reserve.store');
 
 
 //Backend Routes groups with middleware
@@ -45,7 +45,7 @@ Route::group(['middleware'=>'auth'],function(){
     Route::post('/store','Backend\UserController@store')->name('users.store');
     Route::post('/update/{id}','Backend\UserController@update')->name('users.update');
     Route::get('/delete/{id}','Backend\UserController@delete')->name('users.delete');
-    
+
   });
 
   //profiles Route
